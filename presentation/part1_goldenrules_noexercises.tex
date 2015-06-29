@@ -46,18 +46,97 @@
  % SECTION: Golden Rule 1
 \section{Rule 1}
 %\include{sections/subsection_goldenrule1exercise}
+\subsection{Golden Rule 1 Exercise}
+\begin{frame}[fragile]
+  \frametitle{Exercise 1 (Abridged)}
+  \framesubtitle{Summary of commands in the slides}
+  \begin{itemize}
+    \item You will use \texttt{R} at the command-line to analyse your data
+  \end{itemize}
+\begin{lstlisting}[language=bash]
+$ cd ~/introToBioinformatics/data/ex1_expression/
+$ R
+\end{lstlisting}
+
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Exercise 1 (Abridged)}
+  \framesubtitle{Summary of commands in the slides}
+  \begin{itemize}
+    \item You are in group A, B, C or D - this decides your dataset\\
+    \texttt{expnA.tab}, \texttt{expnB.tab}, \texttt{expnC.tab}, or \texttt{expnD.tab}
+  \end{itemize}
+\begin{lstlisting}[language=R]
+> data = read.table("expnA.tab", sep="\t", header=TRUE)
+> head(data)
+  gene1 gene2
+1    10  8.04
+2     8  6.95
+3    13  7.58
+4     9  8.81
+5    11  8.33
+6    14  9.96
+> mean(data$gene1)
+[1] 9
+> mean(data$gene2)
+[1] 7.500909
+> sd(data$gene1)
+[1] 3.316625
+> sd(data$gene2)
+[1] 2.031568
+> cor(data)
+          gene1     gene2
+gene1 1.0000000 0.8164205
+gene2 0.8164205 1.0000000
+\end{lstlisting}
+\end{frame}
+
   \include{sections/subsection_goldenrule1}  
 
  %%%
  % SECTION: Golden Rule 2
 \section{Rule 2}
 %\include{sections/subsection_goldenrule2exercise}
+\subsection{Golden Rule 2 Exercise}
+\begin{frame}[fragile]
+  \frametitle{Exercise 2 (Abridged)}
+  \framesubtitle{Summary of commands in the slides}
+  \begin{itemize}
+    \item You are in group A, B, C or D - this decides your database\\
+    \texttt{dbA}, \texttt{dbB}, \texttt{dbC}, or \texttt{dbD}
+  \end{itemize}
+\begin{lstlisting}[language=bash]
+$ cd ../ex2_blast
+$ script
+Script started, output file is typescript
+$ blastp -num_alignments 1 -num_descriptions 1 -query query.fasta -db dbA
+...
+$ exit
+Script done, output file is typescript
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+$ cat typescript
+Script started on ...
+\end{lstlisting}
+\end{frame}
+
   \include{sections/subsection_goldenrule2}  
 
  %%%
  % SECTION: Golden Rule 3
 \section{Rule 3}
 %\include{sections/subsection_goldenrule3exercise}
+\begin{frame}
+  \frametitle{Exercise 3 (Abridged)}
+  \framesubtitle{Classification}
+  \begin{itemize}
+    \item Rule: If there is a vowel on one side of a card, there \textit{must} be an even number on the other side of that card.
+    \item Is this rule true?
+    \item Which cards, when turned over, can help determine if this rule is true? (How many are there?)
+  \end{itemize}
+  \includegraphics[width=0.8\textwidth]{images/wason}
+\end{frame}
+
   \include{sections/subsection_goldenrule3}  
 
 %%%
